@@ -1,3 +1,20 @@
+# Youtube api
+
+[tutorial}(https://www.youtube.com/watch?v=c6t3bW7kx6E)
+
+*
+ - [Google url api requests with Resource representation](https://developers.google.com/youtube/v3/docs/search)
+ - [Create API and Client ID](https://console.developers.google.com)
+ - [Base url](https://developers.google.com/youtube/v3/docs/search/list#usage)
+
+
+*
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
