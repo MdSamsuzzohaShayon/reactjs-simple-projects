@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Divider, Button} from 'semantic-ui-react';
+import {Divider, Button, Embed} from 'semantic-ui-react';
 
 
 const API = 'AIzaSyBXScYINJ7hV_BOJHK1w00Df7qzHybO33o';
@@ -36,7 +36,8 @@ class Youtube extends Component{
             .then(res => res.json())
             .then(resJson =>{
                 // console.log(resJson);
-                const resultyt = resJson.items.map(obj=>obj.id.videoId);
+                // MAKING ENTIRE LINK FOR ALL VIDEOS
+                const resultyt = resJson.items.map(obj=> "https://youtube.com/embed/"+obj.id.videoId);
                 this.setState({resultyt});                
             })
             .catch(err => console.log(err));
@@ -58,7 +59,21 @@ class Youtube extends Component{
                 <Button color="brown" onClick={this.clicked}>Get Youtube Videos</Button>
                 <div>
                     <Divider inverted />
+                    {
+                        this.state.resultyt.map((link, i) =>{
+                            console.log(link);
+                            // let frame = 
+                        })
+                    }
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/gJ1xEHYN9M4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        
+                        
+                        {/* <Embed 
+                        id='O6Xo21L0ybE'
+                        placeholder='/images/image-16by9.png'
+                        source='youtube'/> */}
+
+
                     <Divider inverted />
                 </div>
                  
