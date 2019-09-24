@@ -32,6 +32,14 @@ class Youtube extends Component{
     }
     clicked(){
         console.log("Clicked");
+        fetch(finalUrl)
+            .then(res => res.json())
+            .then(resJson =>{
+                // console.log(resJson);
+                const resultyt = resJson.items.map(obj=>obj.id.videoId);
+                this.setState({resultyt});                
+            })
+            .catch(err => console.log(err));
         
     }
 
@@ -43,6 +51,7 @@ class Youtube extends Component{
     
     render(){
         console.log(finalUrl);
+        console.log(this.state.resultyt);
         
         return (
             <React.Fragment>

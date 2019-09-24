@@ -2,11 +2,18 @@
 
 [tutorial}(https://www.youtube.com/watch?v=c6t3bW7kx6E)
 
+#### ALL ways to fetch data from API
+ 1. axios
+ 2. fetch API
+ 3. ajax
+ 4. async/await
+
+ [know more](https://dev.to/bjhaid_93/beginners-guide-to-fetching-data-with-ajax-fetch-api--asyncawait-3m1l)
+
 *
  - [Google url api requests with Resource representation](https://developers.google.com/youtube/v3/docs/search)
  - [Create API and Client ID](https://console.developers.google.com)
  - [Base url](https://developers.google.com/youtube/v3/docs/search/list#usage)
-
 
 *
 
