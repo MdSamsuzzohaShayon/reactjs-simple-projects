@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Divider, Button, Embed} from 'semantic-ui-react';
+import {Divider, Button, Grid, Image, Segment} from 'semantic-ui-react';
 
 
 const API = 'AIzaSyBXScYINJ7hV_BOJHK1w00Df7qzHybO33o';
@@ -59,24 +59,24 @@ class Youtube extends Component{
                 <Button color="brown" onClick={this.clicked}>Get Youtube Videos</Button>
                 <div>
                     <Divider inverted />
+                    {/* {
+                        this.state.resultyt.map((link, i) =>{
+                            console.log(link);
+                            let frame = <div key={i}><iframe width="560" height="315" src={link} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> <Divider inverted /></div> 
+                            return frame;
+                        })
+                    } */}
+
+                    <Grid stackable columns={2}>
                     {
                         this.state.resultyt.map((link, i) =>{
                             console.log(link);
-                            // let frame = 
+                            let frame = <Grid.Column key={i}> <Segment > <iframe src={link} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> </Segment></Grid.Column> ; 
+                            return frame;
                         })
                     }
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gJ1xEHYN9M4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        
-                        
-                        {/* <Embed 
-                        id='O6Xo21L0ybE'
-                        placeholder='/images/image-16by9.png'
-                        source='youtube'/> */}
-
-
-                    <Divider inverted />
+                    </Grid>
                 </div>
-                 
             </React.Fragment>
         );
     }

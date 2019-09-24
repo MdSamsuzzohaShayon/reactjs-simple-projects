@@ -23,3 +23,7 @@
 body{
   background: rgb(36, 30, 33);
 }
+iframe{
+  height: 370px;
+  width: 100%;
+}
