@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import NavBar from './components/navbar/NavBar';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider' ;
-import Search from './components/search/Search';
-
-
-
-// https://www.youtube.com/watch?v=dzOrUmK4Qyw
-// https://pixabay.com/api/docs/
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider>
-        <div>
-          <NavBar />
-          <Search />
-        </div>
-      </MuiThemeProvider>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
     );
   }
 }

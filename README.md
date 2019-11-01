@@ -1,32 +1,3 @@
-# Youtube API
-
-[tutorial}(https://www.youtube.com/watch?v=c6t3bW7kx6E)
-
-#### ALL ways to fetch data from API
- 1. axios
- 2. fetch API
- 3. ajax
- 4. async/await
-
- [know more](https://dev.to/bjhaid_93/beginners-guide-to-fetching-data-with-ajax-fetch-api--asyncawait-3m1l)
-
-*
- - [Google url api requests with Resource representation](https://developers.google.com/youtube/v3/docs/search)
- - [Create API and Client ID](https://console.developers.google.com)
- - [Base url](https://developers.google.com/youtube/v3/docs/search/list#usage)
-
-*
-
-
-
-
-
-
-
-
-
-## ReactJS Instructions
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -71,27 +42,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
