@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Projects from './components/Projects'
+
 
 class App extends Component {
+   //INITIAL STATE KEYS SHOULD DEFINE IN CONSTRACTURE
+  constructor(){
+    super();
+    this.state = {
+      projects : [
+        {
+          title: "Website",
+          catagory: 'Web Development and Design of Ecomarce, Social, Personal, Music, Business, News ETC'
+        },
+        {
+          title: "Video Production",
+          catagory: 'Visual effect and motion Graphics'
+        },
+        {
+          title: "3D Modeling",
+          catagory: 'Modeling, Sculpting, Textruing, Animating and Rendering'
+        }
+      ]
+    }
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Projects test=" Hello World"/>
+        {/* THIS STATE WILL BE PROPS IN PROJETCS CLASS */}
+        <Projects projects = {this.state.projects}/>
       </div>
     );
   }
