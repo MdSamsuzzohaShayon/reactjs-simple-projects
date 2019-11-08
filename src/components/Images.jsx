@@ -34,7 +34,7 @@ class Images extends Component{
                     imgSrc : '../img/4.jpg',
                     title: 'Shayon Image Four',
                     details: "Shayon Image Four. This is image details <br/> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex accusantium ut neque inventore voluptates, vitae maiores magnam corporis necessitatibus beatae."
-                },
+                }
             },
             imgStyle: {
                 lrgImgConStyle: {
@@ -56,14 +56,31 @@ class Images extends Component{
     handleClick=(e)=>{
         console.log("this is working fine");
         e.preventDefault();
-        let whole_wrapper = e.target.parentNode.parentNode.parentNode;
+        // let whole_wrapper = e.target.parentNode.parentNode.parentNode;
         // console.log(e.target.parentNode.parentNode.parentNode);
         // console.log(e.target.attributes);
         // console.log(e);
+
+        // let imgSource  = this.state.imgLst.map(element => {
+        //     
+        // });
+        // console.log(imgSource);
+
+
+
+
+        Object.values(this.state.imgLst).forEach(element=>{
+            console.log(element.imgSrc);
+            console.log(e.target.src);
+            
+            
+            // if (element.imgSrc === e.target.src){
+            //     console.log(element);
+                
+            //             // return element.imgSrc;
+            //         }
+         });
         
-        
-        // e.target.style.display = 'none'
-        // console.log(e.target);
         if(this.state.imgStyle.imgListConStyle.display === 'flex'){
             this.setState({
                 imgStyle: {
