@@ -8,9 +8,10 @@ const LargeImg =(props)=>{
             <img src={props.src} alt=""/> 
             <div className="bottom-bar">
                     <h3 className="title">{props.title}</h3>
-                    <p className="descriptions">
-                        {props.desc}
-                    </p>
+                    <div className="descriptions">
+                        {props.details}
+                        {/* <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, quasi?</div> */}
+                    </div>
                     
             </div>
         </div>
