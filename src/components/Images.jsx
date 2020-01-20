@@ -121,25 +121,25 @@ class Images extends Component {
                 // console.log(e.target.src);
                 let sourceString = '..' + e.target.src.toString().slice(21);
                 console.log(sourceString);
-    
+
                 // console.log(str.slice(20, 30));
-    
-    
-    
+
+
+
                 if (element.imgSrc === sourceString) {
                     console.log("Source is matched");
                     console.log("Elelment title: " + element.title);
-    
-    
+
+
                     this.setState({
                         lrgImg: {
                             imgSrc: e.target.src,
                             title: element.title,
                             // details: e.target.desc,
-                            details:element.details
+                            details: element.details
                         }
                     });
-    
+
                     // return element.imgSrc;
                 } else {
                     console.log("Source didn't match");
@@ -166,6 +166,26 @@ class Images extends Component {
     // https://stackoverflow.com/questions/38093760/how-to-access-a-dom-element-in-react-what-is-the-equilvalent-of-document-getele
 
     render() {
+        // let projectItem;
+        // if (this.props.projects) {
+        //     projectItem = this.props.projects.map(project => {
+        //         //console.log(project);
+        //         return (<ProjectItem key={project.title} project={project} />);
+        //     })
+        // }
+
+        let imageItemList;
+        if (this.state) {
+            console.log("there is some state");
+            imageItemList = this.state.imgLst.map(imageList => {
+                for (let i = 0; i < imageList.length; i++) {
+                    return (
+                        <button onClick={this.handleClick} style={this.buttonStyle}><Img src={imageList[i].imgSrc} ></Img></button>
+                    );
+                }
+            });
+        }
+
         return (
             // group a list of children without adding extra nodes to the DOM.
             <React.Fragment >

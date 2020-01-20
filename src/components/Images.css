@@ -2,7 +2,7 @@
     /* width: 100%; */
     display: flex;
     justify-content: space-around;
-    flex-basis: 90%;
+    flex-basis: 70%;
     flex-wrap: wrap;
 }
 .wrapper Img{
