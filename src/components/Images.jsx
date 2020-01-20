@@ -14,28 +14,28 @@ class Images extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            imgLst: {
-                imgStt_1: {
+            imgLst: [
+                {
                     imgSrc: '../img/1.jpg',
                     title: 'Shayon Image One',
                     details: "Shayon Image One. This is image details <br/> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex accusantium ut neque inventore voluptates, vitae maiores magnam corporis necessitatibus beatae."
                 },
-                imgStt_2: {
+                {
                     imgSrc: '../img/2.jpg',
                     title: 'Shayon Imege Two',
                     details: "Shayon Imege Two. This is image details <br/> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex accusantium ut neque inventore voluptates, vitae maiores magnam corporis necessitatibus beatae."
                 },
-                imgStt_3: {
+                {
                     imgSrc: '../img/3.jpg',
                     title: 'Shayon Image Three',
                     details: "Shayon Image Three. This is image details <br/> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex accusantium ut neque inventore voluptates, vitae maiores magnam corporis necessitatibus beatae."
                 },
-                imgStt_4: {
+                {
                     imgSrc: '../img/4.jpg',
                     title: 'Shayon Image Four',
                     details: "Shayon Image Four. This is image details <br/> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex accusantium ut neque inventore voluptates, vitae maiores magnam corporis necessitatibus beatae."
                 }
-            },
+            ],
             imgStyle: {
                 lrgImgConStyle: {
                     display: 'none'
@@ -50,7 +50,7 @@ class Images extends Component {
                 details: ''
             }
         }
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick = (e) => {
@@ -155,6 +155,21 @@ class Images extends Component {
         // e.target.style.display="block"
     }
 
+    closeLargeImage = (e)=>{
+        e.preventDefault();
+        console.log("close button is working fine");
+        this.setState({
+            imgStyle: {
+                lrgImgConStyle: {
+                    display: 'none'
+                },
+                imgListConStyle: {
+                    display: 'flex'
+                }
+            },
+        });
+    }
+
     buttonStyle = {
         background: 'none',
         border: 'none'
@@ -166,47 +181,25 @@ class Images extends Component {
     // https://stackoverflow.com/questions/38093760/how-to-access-a-dom-element-in-react-what-is-the-equilvalent-of-document-getele
 
     render() {
-        // let projectItem;
-        // if (this.props.projects) {
-        //     projectItem = this.props.projects.map(project => {
-        //         //console.log(project);
-        //         return (<ProjectItem key={project.title} project={project} />);
-        //     })
-        // }
 
-        let imageItemList;
-        if (this.state) {
-            console.log("there is some state");
-            imageItemList = this.state.imgLst.map(imageList => {
-                for (let i = 0; i < imageList.length; i++) {
-                    return (
-                        <button onClick={this.handleClick} style={this.buttonStyle}><Img src={imageList[i].imgSrc} ></Img></button>
-                    );
-                }
-            });
-        }
+
+        let imageItemList = this.state.imgLst.map(image => {
+            return (
+                <button onClick={this.handleClick} style={this.buttonStyle} key={image.imgSrc} ><Img src={image.imgSrc}></Img></button>
+            );
+        })
+
+
 
         return (
             // group a list of children without adding extra nodes to the DOM.
             <React.Fragment >
                 <div className="lg-img-con" style={this.state.imgStyle.lrgImgConStyle}>
-                    <LargeImage title={this.state.lrgImg.title} details={this.state.lrgImg.details} src={this.state.lrgImg.imgSrc}></LargeImage>
+                    <LargeImage closeButton={this.closeLargeImage} title={this.state.lrgImg.title} details={this.state.lrgImg.details} src={this.state.lrgImg.imgSrc}></LargeImage>
                     {/* <LargeImage title={this.state.lrgImg.title} details={this.state.lrgImg.details} src={this.state.lrgImg.imgSrc}  > <LargeImage/> */}
                 </div>
                 <div className="wrapper" style={this.state.imgStyle.imgListConStyle}>
-                    {/* <Img src={this.state.imgStt_1.imgSrc} title={this.state.imgStt_1.title} details={this.state.imgStt_1.details}/> */}
-                    <button onClick={this.handleClick} style={this.buttonStyle}>
-                        <Img src={this.state.imgLst.imgStt_1.imgSrc} />
-                    </button>
-                    <button onClick={this.handleClick} style={this.buttonStyle}>
-                        <Img src={this.state.imgLst.imgStt_2.imgSrc} />
-                    </button>
-                    <button onClick={this.handleClick} style={this.buttonStyle}>
-                        <Img src={this.state.imgLst.imgStt_3.imgSrc} />
-                    </button>
-                    <button onClick={this.handleClick} style={this.buttonStyle}>
-                        <Img src={this.state.imgLst.imgStt_4.imgSrc} />
-                    </button>
+                    {imageItemList}
                 </div>
             </React.Fragment>
         );
@@ -215,4 +208,21 @@ class Images extends Component {
 
 
 export default Images;
+
+
+
+{/* <Img src={this.state.imgStt_1.imgSrc} title={this.state.imgStt_1.title} details={this.state.imgStt_1.details}/> 
+<button onClick={this.handleClick} style={this.buttonStyle}>
+<Img src={this.state.imgLst.imgStt_1.imgSrc} />
+</button>
+<button onClick={this.handleClick} style={this.buttonStyle}>
+<Img src={this.state.imgLst.imgStt_2.imgSrc} />
+</button>
+<button onClick={this.handleClick} style={this.buttonStyle}>
+<Img src={this.state.imgLst.imgStt_3.imgSrc} />
+</button>
+<button onClick={this.handleClick} style={this.buttonStyle}>
+<Img src={this.state.imgLst.imgStt_4.imgSrc} />
+</button>
+*/}
 
