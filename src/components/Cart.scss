@@ -1,0 +1,20 @@
+$bodyFont : 0.7rem;
+$headingFont: 1rem;
+
+.App{
+    // font-size: 1rem;
+    width: 100%;
+    height: 100vh;
+    color: rgb(250, 255, 209);
+    background: url(/img/bg.jpg) rgba(21, 4, 68, 0.637);
+    background-blend-mode: soft-light;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .hf{
+        font-size: $headingFont;
+    }
+    .bf{
+       font-size: $bodyFont; 
+    }
+}
