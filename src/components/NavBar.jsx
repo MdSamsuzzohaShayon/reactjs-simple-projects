@@ -1,37 +1,43 @@
 import React from 'react';
-import {Navbar, Nav, NavDropdown, Container, Badge} from "react-bootstrap";
+import {connect} from 'react-redux';
+import { Navbar, Nav, NavDropdown, Container, Badge } from "react-bootstrap";
 
-function NavBar({cart}) {
-    const {count} = cart;
+function NavBar({amount}) {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="white"   >
+        <Navbar collapseOnSelect expand="lg" bg="secondary"  >
             <Container>
-            <Navbar.Brand href="#home">Shoping Cart</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing 
-    <Badge> {count}</Badge>
-                    </Nav.Link>
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
-                </Nav>
-                <Nav>
-                    <Nav.Link href="#deets">More deets</Nav.Link>
-                    <Nav.Link eventKey={2} href="#memes">
-                        Dank memes
+                <Navbar.Brand href="#home">Shoping Cart</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing
+    <Badge>{amount}</Badge>
+                        </Nav.Link>
+                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <Nav.Link eventKey={2} href="#memes">
+                            Dank memes
       </Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
+                    </Nav>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     )
 }
 
-export default NavBar;
+const mapStateToProps =(state) =>{
+    console.log("Map state to props" , state);
+    return {amount: state.amount};
+}
+
+// NOW WE HAVE ACCESS TO STATE AND DISPATCH
+export default connect(mapStateToProps)(NavBar);

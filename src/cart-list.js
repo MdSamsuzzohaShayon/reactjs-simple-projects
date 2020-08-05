@@ -21,14 +21,14 @@ export default [
         amount: 1
     },
     {
-        id: 1,
+        id: 4,
         title: "HUAWEI P40 Pro",
         price: 699.99,
         img: "https://www.gizmochina.com/wp-content/uploads/2020/03/Huawei-P40-Pro-Premium-500x500.jpg",
         amount: 1
     },
     {
-        id: 1,
+        id: 5,
         title: "Mi 10",
         price: 499.99,
         img: "https://i01.appmifile.com/webfile/globalimg/products/pc/mi10/specs1.png",

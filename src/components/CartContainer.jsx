@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Container, Alert, Button } from "react-bootstrap";
 import CartItem from './CartItem';
+import { CLEAR_CART } from '../redux/actions';
 import "./Cart.css";
 
-const CartContainer = ({cart = []}) => {
-    if(cart.length === 0){
+const CartContainer = ({ cart = [], total, dispatch }) => {
+    if (cart.length === 0) {
         return (
             <Container >
+                <br/><br/>
                 <Alert variant="danger">
                     <h3 className="hf">Your cart is empty</h3>
                 </Alert>
@@ -20,15 +23,26 @@ const CartContainer = ({cart = []}) => {
             {cart.map(item => {
                 return <CartItem className="hf" key={item.id} {...item} />;
             })}
-            <br/>
-            <hr/>
+            <br />
+            <hr />
             <div className="cart-total">
-                <h4 className="hf">Total = $0.00</h4>
+                <h4 className="hf">Total = ${total}</h4>
             </div>
-            <Button size="sm" variant="outline-danger" className="hf" >Clean the busket</Button>
+            <Button size="sm" variant="outline-danger" className="hf" onClick={()=>dispatch({type:CLEAR_CART})} >Clean the busket</Button>
         </Container>
     );
 }
 
 
-export default CartContainer;
+
+const mapStateToProps = (state) => {
+    const { cart, total } = state;
+    return {
+        cart,
+        total
+    }
+}
+
+
+
+export default connect(mapStateToProps)(CartContainer);
