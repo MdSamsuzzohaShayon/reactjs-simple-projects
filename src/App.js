@@ -1,6 +1,6 @@
 // https://www.youtube.com/watch?v=731Ur2HGRBY
 
-// time - 46m done
+// time - 147m done
 
 import React from 'react';
 import {Provider} from 'react-redux';

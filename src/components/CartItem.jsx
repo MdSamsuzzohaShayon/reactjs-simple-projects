@@ -16,9 +16,9 @@ const CartItem = (props) => {
                 <Button size="sm" variant="danger" onClick={()=>props.remove()} className="hf" >Remove</Button>
             </Col >
             <Col md={3} >
-                <Button variant="primary" className="bf">+</Button>
+                <Button variant="primary" onClick={()=>props.increase()} className="bf">+</Button>
                 <span className="bf" > Quantity {props.amount} </span>
-                <Button variant="primary" className="bf">-</Button>
+                <Button variant="primary" onClick={()=>props.decrease()} className="bf">-</Button>
             </Col>
         </Row>
     );
@@ -27,10 +27,12 @@ const CartItem = (props) => {
 
 const mapDispatchToProps=(dispatch, ownProps)=>{
     console.log("own props ", ownProps);
-    const {id} = ownProps;
+    const {id, amount} = ownProps;
     console.log("ID:", id);
     return{
-        remove: ()=>dispatch({type:REMOVE, payload: {id}})
+        remove: ()=>dispatch({type:REMOVE, payload: {id}}),
+        increase: ()=>dispatch({type:INCREASE, payload: {id}}),
+        decrease: ()=>dispatch({type:DECREASE, payload: {id, amount}})
     }
 }
 
