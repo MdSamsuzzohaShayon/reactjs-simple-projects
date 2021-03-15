@@ -51,6 +51,7 @@
   
   .target {
     width: 50%;
+    /* THIS WILL NOT SHRINK BY SETTING HEIGHT  */
     min-height: 200px;
     border: 1px solid grey;
   }

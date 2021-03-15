@@ -15,6 +15,40 @@ class ClassComponent extends Component {
                 { id: 2, name: "Item 2" },
                 { id: 3, name: "Item 3" },
                 { id: 4, name: "Item 4" },
+            ],
+            cards: [
+                {
+                    id: 2,
+                    text: "this is card 2"
+                },
+                {
+                    id: 2,
+                    text: "this is card 2"
+                },
+                {
+                    id: 3,
+                    text: "this is card 3"
+                },
+                {
+                    id: 4,
+                    text: "this is card 4"
+                },
+                {
+                    id: 5,
+                    text: "this is card 5"
+                },
+                {
+                    id: 6,
+                    text: "this is card 6"
+                },
+                {
+                    id: 7,
+                    text: "this is card 7"
+                },
+                {
+                    id: 8,
+                    text: "this is card 8"
+                },
             ]
         }
     }
@@ -23,6 +57,16 @@ class ClassComponent extends Component {
     // WHEN WE WILL DROP ANY ITEM THIS FUNCTION  WILL HIT 
     deleteItem = (id) => {
         console.log("Deleting id: " + id);
+        this.setState(prevState => {
+            let items = prevState.items;
+            const index = items.findIndex(item => item.id === id);
+            console.log("Index: ", index);
+
+
+            items.splice(index, 1);
+
+            return { items };
+        });
     }
     render() {
         return (
@@ -43,6 +87,19 @@ class ClassComponent extends Component {
                             </div>
                             <Target />
                         </div>
+                        {/* <div className="card-container">
+                            {
+                                this.state.cards.map((card, i) => (
+                                    <Card
+                                        key={card.id}
+                                        index={i}
+                                        id={card.id}
+                                        text={card.text}
+                                        moveCard={this.moveCard}
+                                    />
+                                ))
+                            }
+                        </div> */}
                     </div>
                 </div>
             </DndProvider>
