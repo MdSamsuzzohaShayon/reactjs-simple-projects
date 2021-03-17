@@ -1,7 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
-import { Card, Segment, Icon } from 'semantic-ui-react';
+import { useState, createContext } from 'react';
+import { Card, Segment } from 'semantic-ui-react';
 import TaskCard from './TaskCard';
+import CardTarget from './CardTarget';
+export const CardContext = createContext({
+    markAsDone: null
+});
+
 
 
 const Tasks = () => {
@@ -47,47 +52,53 @@ const Tasks = () => {
 
     return (
         <div>
-            {/* <Card fluid color='red' >
+            <CardContext.Provider value={{ markAsDone }} >
+                {/* <Card fluid color='red' >
                 <Card.Content header={'About Amy'} />
                 <Card.Content description={description} />
                 <Card.Content extra>
                     <Icon name='user' />4 Friends
                 </Card.Content>
             </Card> */}
-            <Segment>
-                <Card.Group>
-                    {
-                        taskList.filter((task, i) => task.status === 'wip')
-                            .map((task, i) => (
-                                <TaskCard
-                                    key={task._id.toString()}
-                                    _id={task._id}
-                                    category={task.category}
-                                    title={task.title}
-                                    status={task.status}
-                                    details={task.details}
-                                />
-                            ))
-                    }
-                </Card.Group>
-            </Segment>
-            <Segment>
-                <Card.Group>
-                    {
-                        taskList.filter((task, i) => task.status === 'done')
-                            .map((task, i) => (
-                                <TaskCard
-                                    key={task._id.toString()}
-                                    _id={task._id}
-                                    category={task.category}
-                                    title={task.title}
-                                    status={task.status}
-                                    details={task.details}
-                                />
-                            ))
-                    }
-                </Card.Group>
-            </Segment>
+                <Segment>
+                    <Card.Group>
+                        {
+                            taskList.filter((task, i) => task.status === 'wip')
+                                .map((task, i) => (
+                                    <TaskCard
+                                        key={task._id.toString()}
+                                        _id={task._id}
+                                        category={task.category}
+                                        title={task.title}
+                                        status={task.status}
+                                        details={task.details}
+                                    />
+                                ))
+                        }
+                    </Card.Group>
+                </Segment>
+                <Segment>
+                    <Card.Group>
+                        {/* HERE WE WILL DROP OUR ELEMENT  */}
+                        <CardTarget >
+                            {
+                                taskList.filter((task, i) => task.status === 'done')
+                                    .map((task, i) => (
+                                        <TaskCard
+                                            key={task._id.toString()}
+                                            _id={task._id}
+                                            category={task.category}
+                                            title={task.title}
+                                            status={task.status}
+                                            details={task.details}
+                                        />
+                                    ))
+                            }
+                        </CardTarget>
+                    </Card.Group>
+                </Segment>
+            </CardContext.Provider>
+
         </div>
     )
 }
