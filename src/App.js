@@ -6,30 +6,34 @@ import About from './pages/About';
 import JobDetail from './pages/JobDetail';
 import PostJob from './pages/PostJob';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 export class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Router >
-        <Navbar />
-          <Switch>
-            <Route path="/home" exact>
-              <Home />
-            </Route>
-            <Route path="/about" exact>
-              <About />
-            </Route>
-            <Route path="/jobdetail" exact>
-              <JobDetail />
-            </Route>
-            <Route path="/postjob" exact>
-              <PostJob />
-            </Route>
-          </Switch>
-        </Router>
+      <Provider store={store}>
+        <div className="App">
+          <Router >
+            <Navbar />
+            <Switch>
+              <Route path="/home" exact>
+                <Home />
+              </Route>
+              <Route path="/about" exact>
+                <About />
+              </Route>
+              <Route path="/jobdetail" exact>
+                <JobDetail />
+              </Route>
+              <Route path="/postjob" exact>
+                <PostJob />
+              </Route>
+            </Switch>
+          </Router>
 
-      </div>
+        </div>
+      </Provider>
     )
   }
 }
