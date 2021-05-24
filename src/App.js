@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import JobDetail from './pages/JobDetail';
 import PostJob from './pages/PostJob';
+import './App.css';
 
 export class App extends Component {
   render() {

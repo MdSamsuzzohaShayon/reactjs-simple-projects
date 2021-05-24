@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className="Navbar">
+        <div className="Navbar py-4" >
             {/* <Nav
                 activeKey="/home"
                 onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
