@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import JobDetail from './pages/JobDetail';
 import PostJob from './pages/PostJob';
+import SavedJobs from './pages/SavedJobs';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -28,6 +29,9 @@ export class App extends Component {
               </Route>
               <Route path="/postjob" exact>
                 <PostJob />
+              </Route>
+              <Route path="/savedjobs" exact>
+                <SavedJobs />
               </Route>
             </Switch>
           </Router>

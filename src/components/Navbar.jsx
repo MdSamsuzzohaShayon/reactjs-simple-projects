@@ -27,6 +27,7 @@ const Navbar = () => {
                 <Nav >
                     <Nav.Item><Nav.Link as={Link} to="/home"> Home </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link as={Link} to="/about"> About </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link as={Link} to="/savedjobs"> Saved Jobs </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link as={Link} to="/postjob"> <Button variant="primary"> Post A Job </Button></Nav.Link></Nav.Item>
                     {/* <Nav.Item><Nav.Link ><Link to="/about">About</Link> </Nav.Link></Nav.Item> */}
                     {/* <Nav.Item><Nav.Link href="/jobdetail">Job Detail</Nav.Link></Nav.Item> */}
