@@ -1,9 +1,10 @@
 import { createStore } from 'redux';
-import reducer from './reducer/reducer';
+// import reducer from './reducer/employeeReducer';
+import rootReducer from './reducer/rootReducer';
 
 
 const store = createStore(
-    reducer,
+    rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

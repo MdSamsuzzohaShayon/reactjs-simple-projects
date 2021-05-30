@@ -33,9 +33,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state) => {
-    // console.log("this is from state: ", state.jobList);
+    console.log("this is from state: ", state.employee);
     return {
-        jobList: state.jobList
+        jobList: state.employee.jobList
     }
 }
 

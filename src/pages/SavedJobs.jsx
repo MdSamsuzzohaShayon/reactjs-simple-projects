@@ -31,8 +31,8 @@ export class SavedJobs extends Component {
 const mapStateToProps = (state) => {
     // console.log("State from savedJob: ",state.savedJobs);
     return {
-        savedJobs: state.savedJobs,
-        jobList: state.jobList
+        savedJobs: state.employee.savedJobs,
+        jobList: state.employee.jobList
     }
 }
 

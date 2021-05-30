@@ -9,7 +9,7 @@ const initialState = {
 
 
 
-const reducer = (state = initialState, action) => {
+const employeeReducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_JOB:
             // console.log("Save jobs");
@@ -40,4 +40,4 @@ const reducer = (state = initialState, action) => {
 
 
 
-export default reducer;
+export default employeeReducer;
