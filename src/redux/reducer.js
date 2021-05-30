@@ -1,5 +1,5 @@
 import jobList from '../JobList';
-import { SAVE_JOB } from './actionTypes';
+import { SAVE_JOB, UNSAVE_JOB } from './actionTypes';
 
 const initialState = {
     jobList: jobList,
@@ -12,8 +12,8 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_JOB:
-            console.log("Save jobs");
-            console.log("Action payload id: ", action.payload.id);
+            // console.log("Save jobs");
+            // console.log("Action payload id: ", action.payload.id);
             // let newSavedjobs = state.savedJobs.push(action.payload.id);
             let newSavedJobs = [...state.savedJobs, action.payload.id];
             console.log(state);
@@ -22,10 +22,18 @@ const reducer = (state = initialState, action) => {
                 savedJobs: newSavedJobs
             }
             break;
+        case UNSAVE_JOB:
+            // console.log("Unsaved job from reducer");
+            let newUnsaveJob = [...state.savedJobs, !action.payload.id];
+            console.log("New unsave job ",newUnsaveJob);
+            return {
+                ...state,
+                savedJobs: newUnsaveJob
+            }
+            break;
         default:
             console.log("Default reducer");
             return state;
-            break;
     }
 }
 
