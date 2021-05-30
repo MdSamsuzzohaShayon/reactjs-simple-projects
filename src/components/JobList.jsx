@@ -21,7 +21,7 @@ const JobList = (props) => {
                         </Card>
                     </ListGroup.Item>
                 ))) : (
-                    <Alert variant="danger" >
+                    <Alert variant="danger" className="mt-5" >
                         <Alert.Heading>Oh snap! You didn't saved any jobs!</Alert.Heading>
                         <p>
                             Change this and that and try again. Duis mollis, est non commodo

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Container } from 'react-bootstrap';
-import { saveJob } from '../redux/actions';
+import { saveJob } from '../redux/action/actions';
 import JobList from '../components/JobList';
 
 export class Home extends Component {

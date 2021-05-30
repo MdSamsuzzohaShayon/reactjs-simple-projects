@@ -1,5 +1,5 @@
-import jobList from '../JobList';
-import { SAVE_JOB, UNSAVE_JOB } from './actionTypes';
+import jobList from '../../JobList';
+import { SAVE_JOB, UNSAVE_JOB } from '../action/actionTypes';
 
 const initialState = {
     jobList: jobList,
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
             // console.log("Action payload id: ", action.payload.id);
             // let newSavedjobs = state.savedJobs.push(action.payload.id);
             let newSavedJobs = [...state.savedJobs, action.payload.id];
-            console.log(state);
+            // console.log(state);
             return {
                 ...state,
                 savedJobs: newSavedJobs
@@ -24,8 +24,9 @@ const reducer = (state = initialState, action) => {
             break;
         case UNSAVE_JOB:
             // console.log("Unsaved job from reducer");
-            let newUnsaveJob = [...state.savedJobs, !action.payload.id];
-            console.log("New unsave job ",newUnsaveJob);
+            let newUnsaveJob = state.savedJobs.filter(sj => sj !== action.payload.id);
+            console.log("New unsave job ", state.savedJobs);
+
             return {
                 ...state,
                 savedJobs: newUnsaveJob

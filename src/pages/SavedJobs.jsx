@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import JobList from '../components/JobList';
-import { unsaveJob } from '../redux/actions';
+import { unsaveJob } from '../redux/action/actions';
 
 
 export class SavedJobs extends Component {
