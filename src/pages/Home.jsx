@@ -33,7 +33,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log("this is from state: ", state.employee);
+    // console.log("this is from state: ", state.employee);
     return {
         jobList: state.employee.jobList
     }

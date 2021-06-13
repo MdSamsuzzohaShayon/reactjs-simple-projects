@@ -25,7 +25,7 @@ const employeeReducer = (state = initialState, action) => {
         case UNSAVE_JOB:
             // console.log("Unsaved job from reducer");
             let newUnsaveJob = state.savedJobs.filter(sj => sj !== action.payload.id);
-            console.log("New unsave job ", state.savedJobs);
+            // console.log("New unsave job ", state.savedJobs);
 
             return {
                 ...state,

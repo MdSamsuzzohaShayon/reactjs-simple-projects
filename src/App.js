@@ -27,9 +27,9 @@ export class App extends Component {
               <Route path="/jobdetail" exact>
                 <JobDetail />
               </Route>
-              <Route path="/postjob" exact>
+              {/* <Route path="/postjob" exact>
                 <PostJob />
-              </Route>
+              </Route> */}
               <Route path="/savedjobs" exact>
                 <SavedJobs />
               </Route>
